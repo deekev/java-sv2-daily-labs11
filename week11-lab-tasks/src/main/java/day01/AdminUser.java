@@ -1,14 +1,22 @@
 package day01;
 
-public class AdminUser extends NormalUser {
+public class AdminUser implements User {
 
-    public AdminUser(String userEmail, String userPassword) {
-        super(userEmail, userPassword);
+    private String userEmail;
+    private String password;
+
+    public AdminUser(String userEmail, String password) {
+        this.userEmail = userEmail;
+        this.password = password;
+    }
+
+    @Override
+    public String getUserEmail() {
+        return userEmail;
     }
 
     @Override
     public String getPassword() {
-        String secreted = "*".repeat(super.getPassword().length());
-        return secreted;
+        return "*".repeat(password.length());
     }
 }
