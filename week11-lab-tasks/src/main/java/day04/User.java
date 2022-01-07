@@ -33,7 +33,7 @@ public class User {
         }
         item.setExpirationDate(LocalDate.now());
         if (item instanceof Product && item.price >= money * 3) {
-            item.price += (int) (item.price / 100D);
+            item.price += (int) (item.price / 10D);
             ((Product) item).extendExpirationDate();
         }
         money -= item.price;
